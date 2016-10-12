@@ -1,0 +1,76 @@
+#all
+  #content
+    .container
+      .col-md-12
+        %ul.breadcrumb
+          %li
+            %a{:href => "#"} Home
+          %li Checkout - Order review
+      #checkout.col-md-9
+        .box
+          %form
+            %h1 Checkout - Order review
+            %ul.nav.nav-pills.nav-justified
+              %li
+                %a{:href => "checkout1.html"}
+                  %i.fa.fa-map-marker
+                  = succeed "Address" do
+                    %br/
+              %li
+                %a{:href => "checkout2.html"}
+                  %i.fa.fa-truck
+                  = succeed "Delivery" do
+                    %br/
+              %li
+                %a{:href => "checkout3.html"}
+                  %i.fa.fa-money
+                  = succeed "Payment" do
+                    %br/
+              %li.active
+                %a{:href => "#"}
+                  %i.fa.fa-eye
+                  = succeed "Order" do
+                    %br/
+            .content
+              .table-responsive
+                %table.table
+                  %thead
+                    %tr
+                      %th{:colspan => "3"} Product
+                      %th Quantity
+                      %th Unit price
+                      %th Discount
+                      %th Total
+                  %tbody
+                    %tr
+                      %td
+                        %a{:href => "#"}
+                          %img{:alt => "Purastat 5™", :src => "img/purastat_detailsquare.jpg"}/
+                      %td
+                        %a{:href => "#"} Purastat 5™
+                      %td 2
+                      %td $123.00
+                      %td $0.00
+                      %td $369.00
+                  %tfoot
+                    %tr
+                      %th{:colspan => "5"} Total
+                      %th $369.00
+              / /.table-responsive
+            / /.content
+            .box-footer
+              .pull-left
+                %a.btn.btn-default{:href => "checkout3.html"}
+                  %i.fa.fa-chevron-left>
+                  Back to Payment method
+              .pull-right
+                %button.btn.btn-primary{:href => "#"}
+                  Place an order
+                  %i.fa.fa-chevron-right
+        / /.box
+      / /.col-md-9
+      = Haml::Engine.new(File.read('build/order_summary_partial.haml')).render
+      / /.col-md-3
+    / /.container
+  / /#content
+  /

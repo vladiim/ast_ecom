@@ -1,0 +1,98 @@
+#all
+  #content
+    .container
+      .col-md-12
+        %ul.breadcrumb
+          %li
+            %a{:href => "#"} Home
+          %li Shopping cart
+      #basket.col-md-9
+        .box
+          %form
+            %h1 Shopping cart
+            %p.text-muted You currently have 3 item(s) in your cart.
+            .table-responsive
+              %table.table
+                %thead
+                  %tr
+                    %th{:colspan => "2"} Product
+                    %th Quantity
+                    %th Unit price
+                    %th Discount
+                    %th{:colspan => "2"} Total
+                %tbody
+                  %tr
+                    %td
+                      %a{:href => "#"}
+                        %img{:alt => "Purastat 5™", :src => "img/purastat_detailsquare.jpg"}/
+                    %td
+                      %a{:href => "#"} Purastat 5™
+                    %td
+                      %input.form-control{:type => "number", :value => "3"}/
+                    %td $123.00
+                    %td $0.00
+                    %td $369.00
+                    %td
+                      %a{:href => "#"}
+                        %i.fa.fa-trash-o
+                %tfoot
+                  %tr
+                    %th{:colspan => "5"} Total
+                    %th{:colspan => "2"} $369.00
+            / /.table-responsive
+            .box-footer
+              .pull-left
+                %a.btn.btn-default{:href => "category.html"}
+                  %i.fa.fa-chevron-left
+                  Continue shopping
+              .pull-right
+                %button.btn.btn-default
+                  %i.fa.fa-refresh
+                  Update basket
+                %a.btn.btn-primary{:href => "checkout1.html"}
+                  Proceed to checkout
+                  %i.fa.fa-chevron-right
+        / /.box
+        .row.same-height-row
+          .col-md-3.col-sm-6
+            .box.same-height
+              %h3 You may also like these products
+          - 3.times do
+            .col-md-3.col-sm-6
+              .same-height= Haml::Engine.new(File.read('build/product-list.haml')).render
+      / /.col-md-9
+      .col-md-3
+        #order-summary.box
+          .box-header
+            %h3 Order summary
+          %p.text-muted Shipping and additional costs are calculated based on the values you have entered.
+          .table-responsive
+            %table.table
+              %tbody
+                %tr
+                  %td Order subtotal
+                  %th $369.00
+                %tr
+                  %td Shipping and handling
+                  %th $10.00
+                %tr
+                  %td Tax
+                  %th $0.00
+                %tr.total
+                  %td Total
+                  %th $379.00
+        .box
+          .box-header
+            %h4 Coupon code
+          %p.text-muted If you have a coupon code, please enter it in the box below.
+          %form
+            .input-group
+              %input.form-control{:type => "text"}/
+              %span.input-group-btn
+                %button.btn.btn-primary{:type => "button"}
+                  %i.fa.fa-gift
+            / /input-group
+      / /.col-md-3
+    / /.container
+  / /#content
+  /

@@ -1,0 +1,250 @@
+!!!
+%html{:lang => "en"}
+  %head
+    %meta{:content => 'width=device-width, initial-scale=1.0', :name => 'viewport'}
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "nofollow", :name => "robots"}/
+    %title
+      Advanced Skin Technology
+    %link{:href => "http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100", :rel => "stylesheet", :type => "text/css"}/
+    / styles
+    %link{:href => "css/font-awesome.css", :rel => "stylesheet"}/
+    %link{:href => "css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "css/animate.min.css", :rel => "stylesheet"}/
+    %link{:href => "css/owl.carousel.css", :rel => "stylesheet"}/
+    %link{:href => "css/owl.theme.css", :rel => "stylesheet"}/
+    / theme stylesheet
+    %link#theme-stylesheet{:href => "css/style.pink.css", :rel => "stylesheet"}/
+    / your stylesheet with modifications
+    %link{:href => "css/custom.css", :rel => "stylesheet"}/
+    %script{:src => "js/respond.min.js"}
+    %link{:href => "favicon.png", :rel => "shortcut icon"}/
+  %body
+    /
+      *** TOPBAR ***
+      _________________________________________________________
+    #top
+      .container
+        .col-md-6.offer{"data-animate" => "fadeInDown"}
+          %a.btn.btn-success.btn-sm{"data-animate-hover" => "shake", :href => "#"} Offer of the day
+          %a{:href => "#"} Get flat 35% off on orders over $50!
+        .col-md-6{"data-animate" => "fadeInDown"}
+          %ul.menu
+            %li
+              %a{"data-target" => "#login-modal", "data-toggle" => "modal", :href => "#"} Login
+            %li
+              %a{:href => "register.html"} Register
+            %li
+              %a{:href => "contact.html"} Contact
+            %li
+              %a{:href => "#"} Recently viewed
+      #login-modal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "Login", :role => "dialog", :tabindex => "-1"}
+        .modal-dialog.modal-sm
+          .modal-content
+            .modal-header
+              %button.close{"aria-hidden" => "true", "data-dismiss" => "modal", :type => "button"} ×
+              %h4#Login.modal-title Customer login
+            .modal-body
+              %form{:action => "customer-orders.html", :method => "post"}
+                .form-group
+                  %input#email-modal.form-control{:placeholder => "email", :type => "text"}/
+                .form-group
+                  %input#password-modal.form-control{:placeholder => "password", :type => "password"}/
+                %p.text-center
+                  %button.btn.btn-primary
+                    %i.fa.fa-sign-in
+                    Log in
+              %p.text-center.text-muted Not registered yet?
+              %p.text-center.text-muted
+                %a{:href => "register.html"}>
+                  %strong Register now
+                \! It is easy and done in 1 minute and gives you access to special discounts and much more!
+    / *** TOP BAR END ***
+    /
+      *** NAVBAR ***
+      _________________________________________________________
+    #navbar.navbar.navbar-default.yamm{:role => "navigation"}
+      .container
+        .navbar-header
+          %a.navbar-brand.home{"data-animate-hover" => "bounce", :href => "index.html"}
+            %img.hidden-xs{:alt => "logo", :src => "img/logo.png"}/
+            %img.visible-xs{:alt => "logo", :src => "img/logo-small.png"}/
+            %span.sr-only AST - go to homepage
+          .navbar-buttons
+            %button.navbar-toggle{"data-target" => "#navigation", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only Toggle navigation
+              %i.fa.fa-align-justify
+            %button.navbar-toggle{"data-target" => "#search", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only Toggle search
+              %i.fa.fa-search
+            %a.btn.btn-default.navbar-toggle{:href => "basket.html"}
+              %i.fa.fa-shopping-cart
+              %span.hidden-xs 3 items in cart
+        / /.navbar-header
+        #navigation.navbar-collapse.collapse
+          %ul.nav.navbar-nav.navbar-left
+            %li.dropdown.yamm-fw
+              %a.dropdown-toggle{"data-delay" => "200", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "#"}
+                Products
+                %b.caret
+              %ul.dropdown-menu
+                %li
+                  .yamm-content
+                    .row
+                      .col-sm-3
+                        -# brands.each do |brand|
+                        %h5 Natural
+                        %ul
+                          - ['ASPECT', 'ASPECT DR', 'TEEN ASPECT', 'COSMEDIX'].each do |product|
+                            %li
+                              %a{:href => "category.html"}= product
+                      .col-sm-3
+                        %h5 Anti-ageing
+                        %ul
+                          - ['RESULTS RX', 'SKINMEDICA', 'SOCIETE', 'REVISION'].each do |product|
+                            %li
+                              %a{:href => "category.html"}= product
+                      .col-sm-3
+                        %h5 Clinical
+                        %ul
+                          - ['CLINICIANS COMPLEX', 'PCA SKIN', 'DERMAFRAC', 'NESCENS'].each do |product|
+                            %li
+                              %a{:href => "category.html"}= product
+                      .col-sm-3
+                        %h5 Beauty
+                        %ul
+                          - ['XEN-TAN', 'COLORESCIENCE', 'LASHESMD', 'MISS VITALITY'].each do |product|
+                            %li
+                              %a{:href => "category.html"}= product
+                  / /.yamm-content
+            %li.dropdown.yamm-fw
+              %a.dropdown-toggle{"data-delay" => "200", "data-hover" => "dropdown", :href => "#"} Support
+            %li.dropdown.yamm-fw
+              %a.dropdown-toggle{"data-delay" => "200", "data-hover" => "dropdown", :href => "#"} Find a clinic
+        / /.nav-collapse
+        .navbar-buttons
+          #basket-overview.navbar-collapse.collapse.right
+            %a.btn.btn-primary.navbar-btn{:href => "basket.html"}
+              %i.fa.fa-shopping-cart
+              %span.hidden-sm 3 items in cart
+          / /.nav-collapse
+          #search-not-mobile.navbar-collapse.collapse.right
+            %button.btn.navbar-btn.btn-primary{"data-target" => "#search", "data-toggle" => "collapse", :type => "button"}
+              %span.sr-only Toggle search
+              %i.fa.fa-search
+        #search.collapse.clearfix
+          %form.navbar-form{:role => "search"}
+            .input-group
+              %input.form-control{:placeholder => "Search", :type => "text"}/
+              %span.input-group-btn
+                %button.btn.btn-primary{:type => "submit"}
+                  %i.fa.fa-search
+        / /.nav-collapse
+      / /.container
+    / /#navbar
+    / *** NAVBAR END ***
+
+    #yield= yield
+
+    -# *** FOOTER ***
+    -# _________________________________________________________
+    #footer{"data-animate" => "fadeInUp"}
+      .container
+        .row
+          .col-md-3.col-sm-6
+            %h4 Pages
+            %ul
+              %li
+                %a{:href => "text.html"} About us
+              %li
+                %a{:href => "text.html"} Terms and conditions
+              %li
+                %a{:href => "faq.html"} FAQ
+              %li
+                %a{:href => "contact.html"} Contact us
+            %hr/
+            %h4 User section
+            %ul
+              %li
+                %a{"data-target" => "#login-modal", "data-toggle" => "modal", :href => "#"} Login
+              %li
+                %a{:href => "register.html"} Regiter
+            %hr.hidden-md.hidden-lg.hidden-sm/
+          / /.col-md-3
+          .col-md-3.col-sm-6
+            %h4 Top categories
+            %h5 Natural
+            %ul
+              - ['ASPECT', 'ASPECT DR', 'TEEN ASPECT', 'COSMEDIX'].each do |product|
+                %li
+                  %a{:href => "category.html"}= product
+            %h5 Anti-ageing
+            %ul
+              - ['RESULTS RX', 'SKINMEDICA', 'SOCIETE', 'REVISION'].each do |product|
+                %li
+                  %a{:href => "category.html"}= product
+            %hr.hidden-md.hidden-lg/
+          / /.col-md-3
+          .col-md-3.col-sm-6
+            %h4 Where to find us
+            %p
+              %strong AST
+              = succeed "1 Foo St" do
+                %br/
+              = succeed "Sydney" do
+                %br/
+              = succeed "NSW" do
+                %br/
+              %br/
+              %strong Austraila
+            %a{:href => "#"} Go to contact page
+            %hr.hidden-md.hidden-lg/
+          / /.col-md-3
+          .col-md-3.col-sm-6
+            %h4 Get the news
+            %p.text-muted Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+            %form
+              .input-group
+                %input.form-control{:type => "text"}/
+                %span.input-group-btn
+                  %button.btn.btn-default{:type => "button"} Subscribe!
+              / /input-group
+            %hr/
+            %h4 Stay in touch
+            %p.social
+              %a.facebook.external{"data-animate-hover" => "shake", :href => "#"}
+                %i.fa.fa-facebook
+              %a.twitter.external{"data-animate-hover" => "shake", :href => "#"}
+                %i.fa.fa-twitter
+              %a.instagram.external{"data-animate-hover" => "shake", :href => "#"}
+                %i.fa.fa-instagram
+              %a.gplus.external{"data-animate-hover" => "shake", :href => "#"}
+                %i.fa.fa-google-plus
+              %a.email.external{"data-animate-hover" => "shake", :href => "#"}
+                %i.fa.fa-envelope
+          / /.col-md-3
+        / /.row
+      / /.container
+    / /#footer
+    / *** FOOTER END ***
+    /
+      *** COPYRIGHT ***
+      _________________________________________________________
+    #copyright
+      .container
+        .col-md-6
+          %p.pull-left © 2015 Advanced Skin Technology.
+    / *** COPYRIGHT END ***
+  / /#all
+  /
+    *** SCRIPTS TO INCLUDE ***
+    _________________________________________________________
+  %script{:src => "js/jquery-1.11.0.min.js"}
+  %script{:src => "js/bootstrap.min.js"}
+  %script{:src => "js/jquery.cookie.js"}
+  %script{:src => "js/waypoints.min.js"}
+  %script{:src => "js/modernizr.js"}
+  %script{:src => "js/bootstrap-hover-dropdown.js"}
+  %script{:src => "js/owl.carousel.min.js"}
+  %script{:src => "js/front.js"}

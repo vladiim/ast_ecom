@@ -1,0 +1,96 @@
+#all
+  #content
+    .container
+      .col-md-12
+        %ul.breadcrumb
+          %li
+            %a{:href => "#"} Home
+          %li Checkout - Address
+      #checkout.col-md-9
+        .box
+          %form
+            %h1 Checkout
+            %ul.nav.nav-pills.nav-justified
+              %li.active
+                %a{:href => "#"}
+                  %i.fa.fa-map-marker
+                  = succeed "Address" do
+                    %br/
+              %li.disabled
+                %a{:href => "#"}
+                  %i.fa.fa-truck
+                  = succeed "Delivery" do
+                    %br/
+              %li.disabled
+                %a{:href => "#"}
+                  %i.fa.fa-money
+                  = succeed "Payment" do
+                    %br/
+              %li.disabled
+                %a{:href => "#"}
+                  %i.fa.fa-eye
+                  = succeed "Order" do
+                    %br/
+            .content
+              .row
+                .col-sm-6
+                  .form-group
+                    %label{:for => "firstname"} Firstname
+                    %input#firstname.form-control{:type => "text"}/
+                .col-sm-6
+                  .form-group
+                    %label{:for => "lastname"} Lastname
+                    %input#lastname.form-control{:type => "text"}/
+              / /.row
+              .row
+                .col-sm-6
+                  .form-group
+                    %label{:for => "company"} Company
+                    %input#company.form-control{:type => "text"}/
+                .col-sm-6
+                  .form-group
+                    %label{:for => "street"} Street
+                    %input#street.form-control{:type => "text"}/
+              / /.row
+              .row
+                .col-sm-6.col-md-3
+                  .form-group
+                    %label{:for => "city"} Company
+                    %input#city.form-control{:type => "text"}/
+                .col-sm-6.col-md-3
+                  .form-group
+                    %label{:for => "zip"} ZIP
+                    %input#zip.form-control{:type => "text"}/
+                .col-sm-6.col-md-3
+                  .form-group
+                    %label{:for => "state"} State
+                    %select#state.form-control
+                .col-sm-6.col-md-3
+                  .form-group
+                    %label{:for => "country"} Country
+                    %select#country.form-control
+                .col-sm-6
+                  .form-group
+                    %label{:for => "phone"} Telephone
+                    %input#phone.form-control{:type => "text"}/
+                .col-sm-6
+                  .form-group
+                    %label{:for => "email"} Email
+                    %input#email.form-control{:type => "text"}/
+              / /.row
+            .box-footer
+              .pull-left
+                %a.btn.btn-default{:href => "basket.html"}
+                  %i.fa.fa-chevron-left>
+                  Back to basket
+              .pull-right
+                %a.btn.btn-primary{:href => "checkout2.html"}
+                  Continue to Delivery Method
+                  %i.fa.fa-chevron-right
+        / /.box
+      / /.col-md-9
+      = Haml::Engine.new(File.read('build/order_summary_partial.haml')).render
+      / /.col-md-3
+    / /.container
+  / /#content
+  /

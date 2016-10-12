@@ -1,0 +1,18 @@
+img.img-category {
+  max-height: 337px;
+}
+
+img.img-responsive {
+  display: block;
+  margin: 0 auto;
+}
+
+#mainImage {
+  background: white;
+}
+
+@media (max-width: 767px) {
+  #content .product .flip-container img.img-responsive {
+    min-width: 0;
+  }
+}

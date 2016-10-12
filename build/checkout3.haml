@@ -1,0 +1,71 @@
+#all
+  #content
+    .container
+      .col-md-12
+        %ul.breadcrumb
+          %li
+            %a{:href => "#"} Home
+          %li Checkout - Payment method
+      #checkout.col-md-9
+        .box
+          %form
+            %h1 Checkout - Payment method
+            %ul.nav.nav-pills.nav-justified
+              %li
+                %a{:href => "checkout1.html"}
+                  %i.fa.fa-map-marker
+                  = succeed "Address" do
+                    %br/
+              %li
+                %a{:href => "checkout2.html"}
+                  %i.fa.fa-truck
+                  = succeed "Delivery" do
+                    %br/
+              %li.active
+                %a{:href => "#"}
+                  %i.fa.fa-money
+                  = succeed "Payment" do
+                    %br/
+              %li.disabled
+                %a{:href => "checkout4.html"}
+                  %i.fa.fa-eye
+                  = succeed "Order" do
+                    %br/
+            .content
+              .row
+                .col-sm-6
+                  .box.payment-method
+                    %h4 Paypal
+                    %p We like it all.
+                    .box-footer.text-center
+                      %input{:name => "payment", :type => "radio", :value => "payment1"}/
+                .col-sm-6
+                  .box.payment-method
+                    %h4 Payment gateway
+                    %p VISA and Mastercard only.
+                    .box-footer.text-center
+                      %input{:name => "payment", :type => "radio", :value => "payment2"}/
+                .col-sm-6
+                  .box.payment-method
+                    %h4 Cash on delivery
+                    %p You pay when you get it.
+                    .box-footer.text-center
+                      %input{:name => "payment", :type => "radio", :value => "payment3"}/
+              / /.row
+            / /.content
+            .box-footer
+              .pull-left
+                %a.btn.btn-default{:href => "checkout2.html"}
+                  %i.fa.fa-chevron-left>
+                  Back to Shipping method
+              .pull-right
+                %a.btn.btn-primary{:href => "checkout4.html"}
+                  Continue to Order review
+                  %i.fa.fa-chevron-right
+        / /.box
+      / /.col-md-9
+      = Haml::Engine.new(File.read('build/order_summary_partial.haml')).render
+      / /.col-md-3
+    / /.container
+  / /#content
+  /

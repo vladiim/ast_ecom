@@ -1,0 +1,81 @@
+#all
+  #content
+    .container
+      .col-md-12
+        %ul.breadcrumb
+          %li
+            %a{:href => "index.html"} Home
+          %li
+            %a{:href => "category.html"} Brands
+          %li
+            %a{:href => "category.html"} Aspect
+          %li Purastat 5 240ml
+
+      .col-md-12
+        #productMain.row
+          .col-sm-6
+            #mainImage
+              %img.img-responsive{:alt => "", :src => "img/aspect_purastat5_productv2.jpg"}/
+            .ribbon.sale
+              .theribbon SALE
+              .ribbon-background
+            / /.ribbon
+            .ribbon.new
+              .theribbon NEW
+              .ribbon-background
+            / /.ribbon
+          .col-sm-6
+            .box
+              %h1.text-center Purastat 5 240ml
+              %p.goToDescription
+                %a.scroll-to{:href => "#details"} Scroll to product details, material &amp; care and sizing
+              %p.price $124.00
+              %p.text-center.buttons
+                %a.btn.btn-primary{:href => "basket.html"}
+                  %i.fa.fa-shopping-cart
+                  Add to cart
+                %a.btn.btn-default{:href => "basket.html"}
+                  %i.fa.fa-heart
+                  Add to wishlist
+                -# #details.box
+                %h4 Purastat 5™ Purifies
+                %p Free of harsh, damaging surfactants that strip, damage and devitalise your skin, Purastat 5™ thoroughly frees your skin of imbedded dirt, makeup, excess sebum and damaging pollutants by way of an exceedingly gentle blend of sugar and coconut extracts that cleanse and detoxify with the utmost efficiency whilst remaining totally respectful of your skins natural bio-lipidic barrier so as never to strip, dehydrate or overly dry your precious skin.
+                %h4 Purastat 5™ Renews
+                %p Formulated with a superb blend of natural fruit acids from bilberry, sugar cane, sugar maple, orange and lemon, Purastat 5™ effectively renews your skin and complexion by gently unplugging congested pores, discouraging imperfections and lifting away those dulling surface cells and debris that stand between you and your most vital complexion.
+                %h4 Purastat 5™ Restores
+                %p While most cleansers rob your skin of vital moisture, leaving it uncomfortably, dry, tight and lacklustre, Purastat 5™ works overtime to replenish and build vital skin hydration thanks to the inclusion of lactic milk extracts. This natural milk derivative is known for its ability to penetrate and attract moisture into the skins deepest layers and lock it in place. The result is a dramatic, measurable increase in skin hydration that persists for up to 4 hours – long after you have rinsed the cleanser off.
+                %h4 Purastat 5™ Protects
+                %p Botanical infusions of Wasabi root ferment and Canadian Willowherb™ work in tandem as a protective coat of armour and strengthen the appearance of your skin’s natural defences, so it is better able to cope with the visible signs of stress caused by smog, pollution and environmental aggressors.
+                %h4 Purastat 5™ Comforts
+                %p Even the most fragile and delicate of complexions will benefit from the inclusion of more than 7 calming botanicals including extracts of nettle, melissa, cleavers and calendula that work in synergy to comfort and care for skin in need of extra gentle care.
+                %hr/
+                .social
+                  %h4 Show it to your friends
+                  %p
+                    %a.external.facebook{"data-animate-hover" => "pulse", :href => "#"}
+                      %i.fa.fa-facebook
+                    %a.external.gplus{"data-animate-hover" => "pulse", :href => "#"}
+                      %i.fa.fa-google-plus
+                    %a.external.twitter{"data-animate-hover" => "pulse", :href => "#"}
+                      %i.fa.fa-twitter
+                    %a.email{"data-animate-hover" => "pulse", :href => "#"}
+                      %i.fa.fa-envelope
+        .row.same-height-row
+          .col-md-3.col-sm-6
+            .box.same-height
+              %h3 You may also like these products
+          - 3.times do
+            .col-md-3.col-sm-6
+              .same-height= Haml::Engine.new(File.read('build/product-list.haml')).render
+
+        .row.same-height-row
+          .col-md-3.col-sm-6
+            .box.same-height
+              %h3 Products viewed recently
+          - 3.times do
+            .col-md-3.col-sm-6
+              .same-height= Haml::Engine.new(File.read('build/product-list.haml')).render
+      / /.col-md-9
+    / /.container
+  / /#content
+  /

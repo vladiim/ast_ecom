@@ -1,0 +1,65 @@
+#all
+  #content
+    .container
+      .col-md-12
+        %ul.breadcrumb
+          %li
+            %a{:href => "#"} Home
+          %li Aspect
+        .box
+          %h1 Aspect
+          %p The Aspect™ range of cosmeceuticals has been expertly engineered with the latest cutting edge optically pure actives from medical science and nature to protect, nurture, revitalise, and cosmetically restructure your most precious asset. Whether it’s the look of imperfections that’s marring your appearance or the lines of time that announce your age, Aspect™ promises to deliver the youthful glowing skin and complexion that you so desire in no time at all.
+        .box.info-bar
+          .row
+            .col-sm-12.col-md-4.products-showing
+              Showing
+              %strong 12
+              of
+              %strong 25
+              products
+            .col-sm-12.col-md-8.products-number-sort
+              .row
+                %form.form-inline
+                  .col-md-6.col-sm-6
+                    .products-number
+                      %strong Show
+                      %a.btn.btn-default.btn-sm.btn-primary{:href => "#"} 12
+                      %a.btn.btn-default.btn-sm{:href => "#"} 24
+                      %a.btn.btn-default.btn-sm{:href => "#"} All
+                      products
+                  .col-md-6.col-sm-6
+                    .products-sort-by
+                      %strong Sort by
+                      %select.form-control{:name => "sort-by"}
+                        %option Price
+                        %option Name
+                        %option Sales first
+        .row.products
+          - 8.times do
+            .col-md-3.col-sm-4
+              = Haml::Engine.new(File.read('build/product-list.haml')).render
+        / /.products
+        .pages
+          %p.loadMore
+            %a.btn.btn-primary.btn-lg{:href => "#"}
+              %i.fa.fa-chevron-down
+              Load more
+          %ul.pagination
+            %li
+              %a{:href => "#"} «
+            %li.active
+              %a{:href => "#"} 1
+            %li
+              %a{:href => "#"} 2
+            %li
+              %a{:href => "#"} 3
+            %li
+              %a{:href => "#"} 4
+            %li
+              %a{:href => "#"} 5
+            %li
+              %a{:href => "#"} »
+      / /.col-md-9
+    / /.container
+  / /#content
+  /

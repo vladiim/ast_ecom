@@ -1,0 +1,60 @@
+#all
+  #content
+    .container
+      .col-md-12
+        %ul.breadcrumb
+          %li
+            %a{:href => "#"} Home
+          %li Checkout - Delivery method
+      #checkout.col-md-9
+        .box
+          %form
+            %h1 Checkout - Delivery method
+            %ul.nav.nav-pills.nav-justified
+              %li
+                %a{:href => "checkout1.html"}
+                  %i.fa.fa-map-marker
+                  = succeed "Address" do
+                    %br/
+              %li.active
+                %a{:href => "#"}
+                  %i.fa.fa-truck
+                  = succeed "Delivery" do
+                    %br/
+              %li.disabled
+                %a{:href => "#"}
+                  %i.fa.fa-money
+                  = succeed "Payment" do
+                    %br/
+              %li.disabled
+                %a{:href => "#"}
+                  %i.fa.fa-eye
+                  = succeed "Order" do
+                    %br/
+            .content
+              .row
+                - 2.times do
+                  .col-sm-6
+                    .box.shipping-method
+                      %h4 Next Day
+                      %p Get it right on next day - fastest option possible.
+                      .box-footer.text-center
+                        %input{:name => "delivery", :type => "radio", :value => "delivery1"}/
+              / /.row
+            / /.content
+            .box-footer
+              .pull-left
+                %a.btn.btn-default{:href => "checkout1.html"}
+                  %i.fa.fa-chevron-left>
+                  Back to Addresses
+              .pull-right
+                %a.btn.btn-primary{:href => "checkout3.html"}
+                  Continue to Payment Method
+                  %i.fa.fa-chevron-right
+        / /.box
+      / /.col-md-9
+      = Haml::Engine.new(File.read('build/order_summary_partial.haml')).render
+      / /.col-md-3
+    / /.container
+  / /#content
+  /

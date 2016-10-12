@@ -1,0 +1,103 @@
+#all
+  #content
+    .container
+      .col-md-12
+        #main-slider
+          .item
+            %img.img-responsive{:alt => "", :src => "img/main-slider1.jpg"}/
+        / /#main-slider
+    /
+      *** ADVANTAGES HOMEPAGE ***
+      _________________________________________________________
+    #advantages
+      .container
+        .same-height-row
+          .col-sm-4
+            .box.same-height.clickable
+              .icon
+                %i.fa.fa-heart
+              %h3
+                %a{:href => "#"} Customer partners
+              %p We partner with the clinical skin care industry; plastic surgery, cosmetic physician, skincare therapist and dermatology
+          .col-sm-4
+            .box.same-height.clickable
+              .icon
+                %i.fa.fa-lightbulb-o
+              %h3
+                %a{:href => "#"} Driven by science
+              %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+          .col-sm-4
+            .box.same-height.clickable
+              .icon
+                %i.fa.fa-thumbs-up
+              %h3
+                %a{:href => "#"} 100% satisfaction guaranteed
+              %p Free returns on everything for 3 months.
+        / /.row
+      / /.container
+    / /#advantages
+    / *** ADVANTAGES END ***
+    /
+      *** HOT PRODUCT SLIDESHOW ***
+      _________________________________________________________
+    #hot
+      .box
+        .container
+          .col-md-12
+            %h2 Best sellers
+      .container
+        .product-slider
+          - 5.times do
+            .item
+              .product
+                .flip-container
+                  .flipper
+                    .front
+                      %a{:href => "product.html"}
+                        %img.img-responsive.img-category{:alt => "", :src => "img/aspect_purastat5_productv2.jpg"}/
+                    .back
+                      %a{:href => "product.html"}
+                        %img.img-responsive.img-category{:alt => "", :src => "img/aspect_purastat5_productv2.jpg"}/
+                %a.invisible{:href => "product.html"}
+                  %img.img-responsive.img-category{:alt => "", :src => "img/aspect_purastat5_productv2.jpg"}/
+                .text
+                  %h3
+                    %a{:href => "product.html"} Purastat 5 240ml
+                  %p.price
+                    %del $280
+                    $143.00
+                .ribbon.new
+                  .theribbon NEW
+                  .ribbon-background
+      / /.container
+    / /#hot
+    / *** HOT END ***
+    /
+      *** GET INSPIRED ***
+      _________________________________________________________
+    .container{"data-animate" => "fadeInUpBig"}
+      .col-md-12
+        .box.slideshow
+          %h3 Get Inspired
+          %p.lead The latest breakthroughs in skincare
+          #get-inspired.owl-carousel.owl-theme
+            .item
+              %a{:href => "#"}
+                %img.img-responsive{:alt => "Get inspired", :src => "img/getinspired4.png"}/
+    / *** GET INSPIRED END ***
+    /
+      *** BLOG HOMEPAGE ***
+      _________________________________________________________
+    .box.text-center{"data-animate" => "fadeInUp"}
+      .container
+        .col-md-12
+          %h3.text-uppercase From our blog
+          %p.lead
+            What's new in the world of skin technology?
+            %a{:href => "blog.html"} Check our blog!
+
+        / /#blog-homepage
+    / /.container
+    / *** BLOG HOMEPAGE END ***
+  / /#content
+  /
