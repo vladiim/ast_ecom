@@ -34,10 +34,13 @@
                         %option Price
                         %option Name
                         %option Sales first
-        .row.products
-          - 8.times do
-            .col-md-3.col-sm-4
-              = Haml::Engine.new(File.read('build/product-list.haml')).render
+        .row.products.same-height
+          - products[0..7].each do |product|
+            .col-md-3.col-sm-4.same-height
+              = Haml::Engine.new(File.read('build/lib/product-list.haml')).render(Object.new, product: product)
+          -# - 8.times do
+          -#   .col-md-3.col-sm-4
+          -#     = Haml::Engine.new(File.read('build/product-list.haml')).render
         / /.products
         .pages
           %p.loadMore

@@ -47,28 +47,51 @@
             %h2 Best sellers
       .container
         .product-slider
-          - 5.times do
+          - products[0..4].each do |product|
             .item
               .product
                 .flip-container
                   .flipper
                     .front
                       %a{:href => "product.html"}
-                        %img.img-responsive.img-category{:alt => "", :src => "img/aspect_purastat5_productv2.jpg"}/
+                        %img.img-responsive.img-category{:alt => "", :src => "img/#{product.fetch(:img)}"}/
                     .back
                       %a{:href => "product.html"}
-                        %img.img-responsive.img-category{:alt => "", :src => "img/aspect_purastat5_productv2.jpg"}/
+                        %img.img-responsive.img-category{:alt => "", :src => "img/#{product.fetch(:img)}"}/
                 %a.invisible{:href => "product.html"}
-                  %img.img-responsive.img-category{:alt => "", :src => "img/aspect_purastat5_productv2.jpg"}/
+                  %img.img-responsive.img-category{:alt => "", :src => "img/#{product.fetch(:img)}"}/
                 .text
                   %h3
-                    %a{:href => "product.html"} Purastat 5 240ml
+                    %a{:href => "product.html"}= product.fetch(:title)
                   %p.price
-                    %del $280
-                    $143.00
+                    %del= "$#{product.fetch(:price).round(2)}"
+                    = "$#{(product.fetch(:price) * 0.8).round(2)}"
                 .ribbon.new
                   .theribbon NEW
                   .ribbon-background
+
+          -# - 5.times do
+          -#   .item
+          -#     .product
+          -#       .flip-container
+          -#         .flipper
+          -#           .front
+          -#             %a{:href => "product.html"}
+          -#               %img.img-responsive.img-category{:alt => "", :src => "img/aspect_purastat5_productv2.jpg"}/
+          -#           .back
+          -#             %a{:href => "product.html"}
+          -#               %img.img-responsive.img-category{:alt => "", :src => "img/aspect_purastat5_productv2.jpg"}/
+          -#       %a.invisible{:href => "product.html"}
+          -#         %img.img-responsive.img-category{:alt => "", :src => "img/aspect_purastat5_productv2.jpg"}/
+          -#       .text
+          -#         %h3
+          -#           %a{:href => "product.html"} Purastat 5 240ml
+          -#         %p.price
+          -#           %del $280
+          -#           $143.00
+          -#       .ribbon.new
+          -#         .theribbon NEW
+          -#         .ribbon-background
       / /.container
     / /#hot
     / *** HOT END ***

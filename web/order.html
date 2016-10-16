@@ -239,6 +239,13 @@
     <!-- /#navbar -->
     <!-- *** NAVBAR END *** -->
     <div id='yield'>
+      <div class='style'>
+        <style>
+          #top {
+            display: none;
+          }
+        </style>
+      </div>
       <div id='all'>
         <div id='content'>
           <div class='container'>
@@ -247,78 +254,160 @@
                 <li>
                   <a href='#'>Home</a>
                 </li>
-                <li>Checkout - Delivery method</li>
+                <li>
+                  <a href='#'>Orders</a>
+                </li>
+                <li>November 2016</li>
               </ul>
             </div>
-            <div class='col-md-9' id='checkout'>
+            <div class='col-md-9' id='basket'>
               <div class='box'>
                 <form>
-                  <h1>Checkout - Delivery method</h1>
-                  <ul class='nav nav-pills nav-justified'>
-                    <li>
-                      <a href='checkout1.html'>
-                        <i class='fa fa-map-marker'></i>
-                        <br>Address
-                      </a>
-                    </li>
-                    <li class='active'>
-                      <a href='#'>
-                        <i class='fa fa-truck'></i>
-                        <br>Delivery
-                      </a>
-                    </li>
-                    <li class='disabled'>
-                      <a href='#'>
-                        <i class='fa fa-money'></i>
-                        <br>Payment
-                      </a>
-                    </li>
-                    <li class='disabled'>
-                      <a href='#'>
-                        <i class='fa fa-eye'></i>
-                        <br>Order
-                      </a>
-                    </li>
-                  </ul>
-                  <div class='content'>
-                    <div class='row'>
-                      <div class='col-sm-6'>
-                        <div class='box shipping-method'>
-                          <h4>Next Day</h4>
-                          <p>Get it right on next day - fastest option possible.</p>
-                          <div class='box-footer text-center'>
-                            <input name='delivery' type='radio' value='delivery1'>
-                          </div>
-                        </div>
-                      </div>
-                      <div class='col-sm-6'>
-                        <div class='box shipping-method'>
-                          <h4>Next Day</h4>
-                          <p>Get it right on next day - fastest option possible.</p>
-                          <div class='box-footer text-center'>
-                            <input name='delivery' type='radio' value='delivery1'>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <!-- /.row -->
+                  <h1>Monthly order</h1>
+                  <p class='text-muted'>You currently have x item(s) in your cart.</p>
+                  <div class='table-responsive'>
+                    <table class='table'>
+                      <thead>
+                        <tr>
+                          <th colspan='2'>Product</th>
+                          <th>Quantity</th>
+                          <th>Unit price</th>
+                          <th>Discount</th>
+                          <th colspan='2'>Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr data-product-img='aspect_purastat5_productv2.jpg' data-product-price='123.0' data-product-qty='3' data-product-title='Purastat 5™'>
+                          <td>
+                            <a href='product.html'>
+                              <img alt='Purastat 5™' src='img/aspect_purastat5_productv2.jpg'>
+                            </a>
+                          </td>
+                          <td>
+                            <a href='product.html'>Purastat 5™</a>
+                          </td>
+                          <td>
+                            <input class='form-control order-number' type='number' value='3'>
+                          </td>
+                          <td>$123.0</td>
+                          <td class='discount'>20%</td>
+                          <td class='total'>$73.8</td>
+                          <td class='delete'>
+                            <a href='#'>
+                              <i class='fa fa-trash-o'></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr data-product-img='extrememe_20.png' data-product-price='239.0' data-product-qty='10' data-product-title='Extreme C 20 30ml'>
+                          <td>
+                            <a href='product.html'>
+                              <img alt='Extreme C 20 30ml' src='img/extrememe_20.png'>
+                            </a>
+                          </td>
+                          <td>
+                            <a href='product.html'>Extreme C 20 30ml</a>
+                          </td>
+                          <td>
+                            <input class='form-control order-number' type='number' value='10'>
+                          </td>
+                          <td>$239.0</td>
+                          <td class='discount'>20%</td>
+                          <td class='total'>$478.0</td>
+                          <td class='delete'>
+                            <a href='#'>
+                              <i class='fa fa-trash-o'></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr data-product-img='jungle_brew.png' data-product-price='87.99' data-product-qty='5' data-product-title='Jungle Brew 30ml'>
+                          <td>
+                            <a href='product.html'>
+                              <img alt='Jungle Brew 30ml' src='img/jungle_brew.png'>
+                            </a>
+                          </td>
+                          <td>
+                            <a href='product.html'>Jungle Brew 30ml</a>
+                          </td>
+                          <td>
+                            <input class='form-control order-number' type='number' value='5'>
+                          </td>
+                          <td>$87.99</td>
+                          <td class='discount'>20%</td>
+                          <td class='total'>$87.99</td>
+                          <td class='delete'>
+                            <a href='#'>
+                              <i class='fa fa-trash-o'></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr data-product-img='benefit_clean.png' data-product-price='47.0' data-product-qty='8' data-product-title='Benefit Clean'>
+                          <td>
+                            <a href='product.html'>
+                              <img alt='Benefit Clean' src='img/benefit_clean.png'>
+                            </a>
+                          </td>
+                          <td>
+                            <a href='product.html'>Benefit Clean</a>
+                          </td>
+                          <td>
+                            <input class='form-control order-number' type='number' value='8'>
+                          </td>
+                          <td>$47.0</td>
+                          <td class='discount'>20%</td>
+                          <td class='total'>$75.2</td>
+                          <td class='delete'>
+                            <a href='#'>
+                              <i class='fa fa-trash-o'></i>
+                            </a>
+                          </td>
+                        </tr>
+                        <tr data-product-img='tns_recovery_complex.png' data-product-price='189.0' data-product-qty='1' data-product-title='TNS Recovery Complex®'>
+                          <td>
+                            <a href='product.html'>
+                              <img alt='TNS Recovery Complex®' src='img/tns_recovery_complex.png'>
+                            </a>
+                          </td>
+                          <td>
+                            <a href='product.html'>TNS Recovery Complex®</a>
+                          </td>
+                          <td>
+                            <input class='form-control order-number' type='number' value='1'>
+                          </td>
+                          <td>$189.0</td>
+                          <td class='discount'>20%</td>
+                          <td class='total'>$37.8</td>
+                          <td class='delete'>
+                            <a href='#'>
+                              <i class='fa fa-trash-o'></i>
+                            </a>
+                          </td>
+                        </tr>
+                      </tbody>
+                      <tfoot>
+                        <tr>
+                          <th colspan='5'>Total</th>
+                          <th class='total' colspan='2'>$805.59</th>
+                        </tr>
+                      </tfoot>
+                    </table>
                   </div>
-                  <!-- /.content -->
+                  <!-- /.table-responsive -->
                   <div class='box-footer'>
                     <div class='pull-left'>
-                      <a class='btn btn-default' href='checkout1.html'><i class='fa fa-chevron-left'></i>Back to Addresses
+                      <a class='btn btn-default' href='category.html'>
+                        <i class='fa fa-chevron-left'></i>
+                        Continue shopping
                       </a>
                     </div>
                     <div class='pull-right'>
-                      <a class='btn btn-primary' href='checkout3.html'>
-                        Continue to Payment Method
+                      <a class='btn btn-primary' href='order_updated.html'>
+                        Update order
                         <i class='fa fa-chevron-right'></i>
                       </a>
                     </div>
                   </div>
                 </form>
               </div>
-              <!-- /.box -->
             </div>
             <!-- /.col-md-9 -->
             <div class='col-md-3'>
@@ -332,7 +421,7 @@
                     <tbody>
                       <tr>
                         <td>Order subtotal</td>
-                        <th>$369.00</th>
+                        <th class='total-price'>$805.59</th>
                       </tr>
                       <tr>
                         <td>Shipping and handling</td>
@@ -344,11 +433,28 @@
                       </tr>
                       <tr class='total'>
                         <td>Total</td>
-                        <th>$379.00</th>
+                        <th class='total-shipping'>$885.59</th>
                       </tr>
                     </tbody>
                   </table>
                 </div>
+              </div>
+              <div class='box'>
+                <div class='box-header'>
+                  <h4>Coupon code</h4>
+                </div>
+                <p class='text-muted'>If you have a coupon code, please enter it in the box below.</p>
+                <form>
+                  <div class='input-group'>
+                    <input class='form-control' type='text'>
+                    <span class='input-group-btn'>
+                      <button class='btn btn-primary' type='button'>
+                        <i class='fa fa-gift'></i>
+                      </button>
+                    </span>
+                  </div>
+                  <!-- /input-group -->
+                </form>
               </div>
             </div>
             <!-- /.col-md-3 -->

@@ -1,32 +1,10 @@
-* Build layout
+* email > order (update qty, over 10 discount, delete product, add new product) > thank you, note do on desktop
 
-    - Nav
+* persona
 
-    - Deal
+* CJM
 
-    - Footer
-
-* Layout yield > partial
-
-* Static
-
-    - Product list
-
-    - Product page
-
-* Data build (just 8 products from aspect)
-
-    - Product list
-
-    - Product pages
-
-* Data build - scrape all products
-
-* Favicon
-
-* Checkout
-
-* Responsive
+* more products throughout site
 
 * Show banners probabilistically: https://github.com/fl00r/pickup
 

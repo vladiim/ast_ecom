@@ -64,17 +64,17 @@
           .col-md-3.col-sm-6
             .box.same-height
               %h3 You may also like these products
-          - 3.times do
+          - products[1..3].each do |product|
             .col-md-3.col-sm-6
-              .same-height= Haml::Engine.new(File.read('build/product-list.haml')).render
+              .same-height= Haml::Engine.new(File.read('build/lib/product-list.haml')).render(Object.new, product: product)
 
         .row.same-height-row
           .col-md-3.col-sm-6
             .box.same-height
               %h3 Products viewed recently
-          - 3.times do
+          - products[4..6].each do |product|
             .col-md-3.col-sm-6
-              .same-height= Haml::Engine.new(File.read('build/product-list.haml')).render
+              .same-height= Haml::Engine.new(File.read('build/lib/product-list.haml')).render(Object.new, product: product)
       / /.col-md-9
     / /.container
   / /#content

@@ -35,6 +35,15 @@
               .row
                 .col-sm-6
                   .box.payment-method
+                    %h4 Charge account
+                    %p
+                      Use your existing account.
+                      %a{href: '#'} Setup account
+                      = '.'
+                    .box-footer.text-center
+                      %input{:name => "payment", :type => "radio", :value => "payment0"}/
+                .col-sm-6
+                  .box.payment-method
                     %h4 Paypal
                     %p We like it all.
                     .box-footer.text-center

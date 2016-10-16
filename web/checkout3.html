@@ -100,7 +100,7 @@
               <span class='sr-only'>Toggle navigation</span>
               <i class='fa fa-align-justify'></i>
             </button>
-            <button class='navbar-toggle' data-target='#search' data-toggle='collapse' type='button'>
+            <button class='navbar-toggle search-icon' data-target='#search' data-toggle='collapse' type='button'>
               <span class='sr-only'>Toggle search</span>
               <i class='fa fa-search'></i>
             </button>
@@ -282,6 +282,19 @@
                   </ul>
                   <div class='content'>
                     <div class='row'>
+                      <div class='col-sm-6'>
+                        <div class='box payment-method'>
+                          <h4>Charge account</h4>
+                          <p>
+                            Use your existing account.
+                            <a href='#'>Setup account</a>
+                            .
+                          </p>
+                          <div class='box-footer text-center'>
+                            <input name='payment' type='radio' value='payment0'>
+                          </div>
+                        </div>
+                      </div>
                       <div class='col-sm-6'>
                         <div class='box payment-method'>
                           <h4>Paypal</h4>
@@ -515,4 +528,5 @@
   <script src='js/bootstrap-hover-dropdown.js'></script>
   <script src='js/owl.carousel.min.js'></script>
   <script src='js/front.js'></script>
+  <script src='js/custom.js'></script>
 </html>

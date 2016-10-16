@@ -1,0 +1,23 @@
+.style
+  :css
+    #top,
+    #footer .container,
+    button.navbar-toggle.search-icon {
+      display: none;
+    }
+
+#all
+  #content
+    .container
+      %h2 Edit your monthly order
+
+      %p
+        %p Your regular order will be processed in three days. If you'd like to update click on the link below.
+        %b The current order:
+        %ul
+          - products.each do |product|
+            %li
+              %a{ href: '' }= "#{product.fetch(:title)}"
+              = "X #{product.fetch(:qty)} ($#{(product.fetch(:qty) * product.fetch(:price)).round(2)})"
+
+        %a.btn.btn-primary{ href: 'order.html' } Edit order

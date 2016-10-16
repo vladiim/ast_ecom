@@ -1,0 +1,39 @@
+.product
+  .flip-container
+    .flipper
+      .front
+        %a{:href => "product.html"}
+          %img.img-responsive.img-category{:alt => "", :src => "img/#{product.fetch(:img)}"}/
+      .back
+        %a{:href => "product.html"}
+          %img.img-responsive.img-category{:alt => "", :src => "img/#{product.fetch(:img)}"}/
+  %a.invisible{:href => "product.html"}
+    %img.img-responsive.img-category{:alt => "", :src => "img/#{product.fetch(:img)}"}/
+  .text
+    %h3
+      %a{:href => "product.html"}= product.fetch(:title)
+    %p.price
+      %del= "$#{product.fetch(:price).round(2)}"
+      = "$#{(product.fetch(:price) * 0.8).round(2)}"
+    %p.buttons
+      %a.btn.btn-default{:href => "product.html"} View detail
+      %a.btn.btn-primary{:href => "basket.html"}
+        %i.fa.fa-shopping-cart>
+        Add to cart
+  / /.text
+  - if (rand > 0.9)
+    .ribbon.sale
+      .theribbon SALE
+      .ribbon-background
+  / /.ribbon
+  - if (rand > 0.8)
+    .ribbon.new
+      .theribbon NEW
+      .ribbon-background
+  / /.ribbon
+  - if (rand > 0.9)
+    .ribbon.gift
+      .theribbon PRO
+      .ribbon-background
+  / /.text
+/ /.product

@@ -1,3 +1,10 @@
+.style
+  :css
+    #top {
+      display: none;
+    }
+
+
 #all
   #content
     .container
@@ -5,12 +12,14 @@
         %ul.breadcrumb
           %li
             %a{:href => "#"} Home
-          %li Shopping cart
+          %li
+            %a{:href => "#"} Orders
+          %li November 2016
       #basket.col-md-9
         .box
           %form
-            %h1 Shopping cart
-            %p.text-muted You currently have 3 item(s) in your cart.
+            %h1 Monthly order
+            %p.text-muted You currently have x item(s) in your cart.
             .table-responsive
               %table.table
                 %thead
@@ -21,24 +30,26 @@
                     %th Discount
                     %th{:colspan => "2"} Total
                 %tbody
-                  %tr
-                    %td
-                      %a{:href => "#"}
-                        %img{:alt => "Purastat 5™", :src => "img/purastat_detailsquare.jpg"}/
-                    %td
-                      %a{:href => "#"} Purastat 5™
-                    %td
-                      %input.form-control{:type => "number", :value => "3"}/
-                    %td $123.00
-                    %td $0.00
-                    %td $369.00
-                    %td
-                      %a{:href => "#"}
-                        %i.fa.fa-trash-o
+                  - products[0..4].each do |product|
+                    %tr{'data-product' => product}
+                      %td
+                        %a{:href => "product.html"}
+                          %img{:alt => product.fetch(:title), :src => "img/#{product.fetch(:img)}"}/
+                      %td
+                        %a{:href => "product.html"}= product.fetch(:title)
+                      %td
+                        %input.form-control.order-number{:type => "number", :value => product.fetch(:qty)}/
+                      %td= "$#{product.fetch(:price)}"
+                      %td.discount 20%
+                      %td.total= "$#{(product.fetch(:qty) * product.fetch(:price) * 0.2).round(2)}"
+                      %td.delete
+                        %a{:href => "#"}
+                          %i.fa.fa-trash-o
                 %tfoot
                   %tr
                     %th{:colspan => "5"} Total
-                    %th{:colspan => "2"} $369.00
+                    - foot_total = products.inject(0) { |sum, p| sum + (p.fetch(:qty) * p.fetch(:price) * 0.2) }
+                    %th.total{:colspan => "2"}= "$#{foot_total.round(2)}"
             / /.table-responsive
             .box-footer
               .pull-left
@@ -46,20 +57,10 @@
                   %i.fa.fa-chevron-left
                   Continue shopping
               .pull-right
-                %button.btn.btn-default
-                  %i.fa.fa-refresh
-                  Update basket
-                %a.btn.btn-primary{:href => "checkout1.html"}
-                  Proceed to checkout
+                %a.btn.btn-primary{:href => "order_updated.html"}
+                  Update order
                   %i.fa.fa-chevron-right
-        / /.box
-        .row.same-height-row
-          .col-md-3.col-sm-6
-            .box.same-height
-              %h3 You may also like these products
-          - products[4..6].each do |product|
-            .col-md-3.col-sm-6
-              .same-height= Haml::Engine.new(File.read('build/lib/product-list.haml')).render(Object.new, product: product)
+
       / /.col-md-9
       .col-md-3
         #order-summary.box
@@ -71,7 +72,8 @@
               %tbody
                 %tr
                   %td Order subtotal
-                  %th $369.00
+                  - total_price = products.inject(0) { |sum, p| sum + (p.fetch(:qty) * p.fetch(:price) * 0.2) }
+                  %th.total-price= "$#{total_price.round(2)}"
                 %tr
                   %td Shipping and handling
                   %th $10.00
@@ -80,7 +82,7 @@
                   %th $0.00
                 %tr.total
                   %td Total
-                  %th $379.00
+                  %th.total-shipping= "$#{products.inject(0) { |sum, p| sum + (p.fetch(:qty) * p.fetch(:price) * 0.2) + 10 }.round(2) }"
         .box
           .box-header
             %h4 Coupon code
